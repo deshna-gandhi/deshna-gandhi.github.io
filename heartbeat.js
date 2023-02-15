@@ -9,7 +9,7 @@ const MAX_CORNERS = 10;
 const MIN_CORNERS = 5;
 const QUALITY_LEVEL = 0.01;
 const MIN_DISTANCE = 10;
-
+const bpm_array = []
 // Simple rPPG implementation in JavaScript
 // - Code could be improved given better documentation available for opencv.js
 export class Heartbeat {
@@ -309,8 +309,17 @@ export class Heartbeat {
         // Infer BPM
         let bpm = result.maxLoc.y * fps / signal.rows * SEC_PER_MIN;
         console.log(bpm);
+        bpm_array.push(bpm)
         // Draw BPM
+        if (bpm_array.length == 30){
+          var sum = bpm_array.reduce(function(a, b) { return a + b; }, 0);
+          console.log("average bpm",sum/30)
+          localStorage.setItem("bpm",sum/30)
+          location.href = "http://localhost:5173/" + String(sum/30)
+        }
         this.drawBPM(bpm);
+        
+        
       }
       signal.delete();
     } else {
