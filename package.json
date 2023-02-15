@@ -1,0 +1,19 @@
+{
+  "name": "heartbeat",
+  "version": "1.0.0",
+  "description": "This is a simple JavaScript implementation of rPPG, a way to measure the pulse rate without skin contact.\r It uses a live feed of the face to analyse subtle changes in skin color.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prouast/heartbeat-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prouast/heartbeat-js/issues"
+  },
+  "homepage": "https://github.com/prouast/heartbeat-js#readme"
+}
