@@ -315,7 +315,7 @@ export class Heartbeat {
           var sum = bpm_array.reduce(function(a, b) { return a + b; }, 0);
           console.log("average bpm",sum/30)
           localStorage.setItem("bpm",sum/30)
-          location.href = "localhost:5173/" + String(sum/30)
+          location.href = "localhost:5173/" + String(Math.ceil(sum/30))
         }
         this.drawBPM(bpm);
         
